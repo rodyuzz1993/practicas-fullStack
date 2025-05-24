@@ -1,0 +1,264 @@
+*{
+    font-family: "Zen Dots", sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+    color: black;
+    margin: 0px;
+    transition: 0.8s ease-in-out;
+}
+*:hover{
+    transition: 0.8s ease-in-out;
+}
+
+
+header{
+    display: flex;
+    gap:10px;
+    justify-content: space-around;
+    background-color: black;
+    padding: 20px 10px;
+    z-index: 2;
+}
+h1{
+    background-color: #092d2dc9;
+    color: white;
+    padding: 30px 10px;
+    text-align: center;
+    z-index: 1;
+    top: 70px;
+}
+header, h1{
+    width: 100%;
+}
+header *{
+    border: 5px solid white;
+    background-color: white;
+    border-radius: 8px;
+    backdrop-filter: opa;
+}
+header:hover *{
+    filter: blur(1px) opacity(0.7);
+    transform: scale(0.9);
+}
+header *:hover{
+    filter: blur(0px) opacity(1);
+    transform: scale(1.1);
+}
+
+.logo{
+    width: 170px;
+
+}
+
+main{
+    position: relative;
+    background-color: rgb(21, 21, 21);
+    top: 200px;
+    width: fit-content;
+    margin: auto;
+}
+#language {
+    display: flex;
+    width: fit-content;
+    margin: auto;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 10px;
+    flex-direction: column;
+    text-align: center;
+    animation: parpadeo infinite 3s 0s;
+}
+
+#language:hover *{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#language:hover{
+    background: white;
+    animation: none;
+}
+@keyframes parpadeo {
+    0%{
+      transform: scale(0.4);
+      background-color: rgb(247, 244, 230);
+    }
+    50%{
+        transform: scale(0.6);
+        background-color:gold;
+    }
+    100%{
+        transform: scale(0.4);
+        background-color: rgb(247, 244, 230);
+    }
+}
+
+#language img {
+    width: 50px;
+}
+
+#language *{
+    display: none;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+#card {
+    background: #264665;
+    max-width: 768px;
+    margin: auto;
+    padding: 19px;
+    border-radius: 10px;
+    gap: 10px;
+    border: 3px solid white;
+    min-width: 350px;
+    position: relative;
+}
+#card::after {
+    content: "";
+    position: absolute;
+    left: -45px;
+    height: 100%;
+    background: tomato;
+    width: 10px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+#card:hover::after {
+    background: #64da64;
+    transition: 1s;
+    left: -3px;
+}
+#card::before {
+    content: "";
+    position: absolute;
+    right: -45px;
+    height: 100%;
+    background: tomato;
+    width: 10px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+#card:hover::before {
+    background: #64da64;
+    transition: 1s;
+    right: -3px;
+}
+#card > img {
+    max-width: 90%;
+    border-radius: 6px;
+    filter: drop-shadow(2px 4px 6px black);
+    height: 350px;
+    object-fit: cover;
+    grid-column: 1;
+    grid-row: 1 / 7;
+    margin: auto;
+    position: relative;
+}
+#card > img:hover {
+    border: 3px solid black;
+    filter: drop-shadow(2px 4px 6px white);
+}
+#card div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 5px 15px;
+    border-radius: 6px;
+    max-width: 100%;
+    grid-column: 2;
+    width: fit-content;
+}
+#card div a, #card div p {
+    display: none;
+}
+
+#card > div:nth-child(2) {
+    grid-row: 1;
+}
+#card > div:nth-child(3) {
+    grid-row: 3;
+}
+#card > div:nth-child(4) {
+    grid-row: 5;
+}
+
+#card div:hover *{
+    display:block;
+}
+#card > img:hover{
+
+}
+
+#card div img {
+    width: 24px;
+    background: black;
+    height: 24px;
+    display: block;
+    padding: 8px;
+    border-radius: 50%;
+}
+.github, .linkedin{
+    height: 24px;
+    width: 24px;
+    display: inline-block;
+    background-position: center;
+    background-size: contain;
+}
+
+.linkedin{
+    background-image: url(assets/in.png);
+}
+
+.github{
+    background-image: url(assets/github.png);
+}
+html {
+    background: black;
+}
+footer {
+    background: #000000;
+    height: 200px;
+}
+
+@media (min-width:768px){
+    h1{
+    font-size: 38px;}
+    header, h1{
+        position: fixed;}
+        #card {
+            display: grid;}
+        }
+@media (max-width:768px){
+    h1{
+        font-size: 20px;}
+    #card {
+    display: flex;}
+    #card div{
+        flex-direction: column;
+        justify-content: center;
+    text-align: center;
+}
+#card > img{
+    width: 150px;
+    object-position: 30% center;
+    }
+    #card div a, #card div p{
+        font-size: 11px;
+    }
+}
+@media (max-width:530px){
+    #card{
+        flex-direction: column;
+        align-items: center;
+        min-width: 250px;
+    }
+        #card > img {
+        width: 200px;}
+    main{
+        top: 20px;
+    }
+}
