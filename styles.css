@@ -1,0 +1,96 @@
+*, *:hover{
+    transition: 0.3s ease-in-out;
+}
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+}
+body{
+    background-color: rgb(227, 238, 255);
+}
+
+.calculadora {
+    display: flex;
+    margin: 20px auto;
+    justify-content: center;
+    background: #2f2f2f;
+    padding: 15px;
+    width: fit-content;
+    border-radius: 8px;
+    flex-direction: column;
+    gap: 15px;
+    border-bottom: 8px solid black;
+    border-right: 6px solid black;
+}
+#operaciones, #numeros {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+#numeros{
+    flex-wrap: wrap;
+    max-width: 110px;
+}
+.operacion, .resultados {
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#resultado {
+    position: relative;
+    background-color: #93d927;
+    text-align: end;
+    padding: 5px 8px;
+    color: black;
+    border-radius: 4px;
+    font-size: 1.3em;
+    border-bottom: 3px solid black;
+    border-left: 3px solid black;
+    box-shadow: 10px -9px 5px -8px rgba(0, 0, 0, 0.75) inset;
+    height: 25px;
+}
+#resultado:before{
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #d4dfd394;
+    filter: blur(14px);
+}
+.calculadora input {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+    outline: outset 2px white;
+    font-weight: 700;
+    cursor: pointer;
+}
+input.ope {
+    background: #000;
+}
+input.numero {
+    background: #28285c;
+}
+.calculadora input:hover{
+    transform: scale(0.95);
+    filter: brightness(1.2);
+}
+input#igual{
+    height: 70px; 
+}
+input#clear, input#delete, input#igual{
+    background-color: tomato;
+}
+
+input.ope:disabled {
+    filter: contrast(0.6);
+    transform: scale(0.8);
+    cursor: no-drop;
+}
