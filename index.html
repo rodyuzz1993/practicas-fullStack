@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Stardos+Stencil:wght@400;700&display=swap" rel="stylesheet">
+
+
     <link rel="stylesheet" href="styles.css">
     <script src="calculadora.js" defer></script>
+    <script src="reloj.js" defer></script>
 </head>
 <body>
     <header>
@@ -109,17 +113,34 @@
                 RELOJ EN TIEMPO REAL
             </h2>
             <summary>
-                <strong>
-
-                </strong>
-                <p>
-
-                </p>
+                <strong>Objetivo:</strong>
+                <p>Mostrar la hora actual actualizándose cada segundo</p>
                 <ul>
-                    <li>
-                        
-                    </li>
+                    <li>Obtener la hora con Date()</li>
+                    <li>Mostrarla en formato hh:mm:ss</li>
+                    <li>Usar setInterval() para actualizar cada segundo</li>
+                    <li>Animaciones suaves en CSS (opcional)</li>
+                    <li>Diseño responsivo y estilizado (flexbox)</li>
                 </ul>
+                <article class="reloj">
+                    <h2 id="digitalClock">
+                        00:00:00
+                    </h2>
+                    <div class="dia">
+                        <span class="Mon">Lun</span>
+                        <span class="Tue">Mar</span>
+                        <span class="Wed">Mie</span>
+                        <span class="Thu">Jue</span>
+                        <span class="Fri">Vie</span>
+                        <span class="Sat">Sab</span>
+                        <span class="Sun">Dom</span>
+                    </div>
+                    <div>
+                        <span id="fechaDate">5 feb 2025</span>
+                    |
+                        <span id="zonaHoraria">México</span>
+                    </div>
+                </article>
         </section>
         <section id="gato">
             <h2>

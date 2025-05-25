@@ -9,7 +9,6 @@ const clear = document.getElementById("clear")
 const igual = document.getElementById("igual")
 
 numero.forEach(value => {
-    console.log(value.value)
     value.addEventListener("click", ()=> clickear(value))
 });
 

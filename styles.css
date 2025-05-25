@@ -11,6 +11,10 @@ body{
     background-color: rgb(227, 238, 255);
 }
 
+
+
+
+
 .calculadora {
     display: flex;
     margin: 20px auto;
@@ -93,4 +97,74 @@ input.ope:disabled {
     filter: contrast(0.6);
     transform: scale(0.8);
     cursor: no-drop;
+}
+
+#reloj *{
+    font-family: "Stardos Stencil", system-ui;
+}
+
+h2#digitalClock {
+    font-size: 58px;
+    letter-spacing: 6px;
+}
+
+article.reloj {
+    background: black;
+    color: white;
+    width: fit-content;
+    margin: 30px auto;
+    padding: 0px 20px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid #ffffff 5px;
+    transform: rotateY(50deg) rotateX(0deg) scaleX(1.5);
+    border-right-width: 22px;
+    border-top-width: 7px;
+    filter: drop-shadow(4px 4px 3px black);
+    position: relative;
+}
+article.reloj::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    background: black;
+    height: 100%;
+    width: 20px;
+    right: -5px;
+    border-radius: 25px;
+}
+.reloj > h2#digitalClock:after {
+    background: #b1f645;
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 22%;
+    z-index: 2;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 56%;
+    transition: 2s;
+}
+
+.reloj > h2#digitalClock:hover::after{
+    transition: 2s;
+    width: 80%;
+    background-color: rgb(17, 255, 0);
+}
+
+.dia .active, #fechaDate{
+    color: #b1f645;
+    font-size: 1.1em;
+}
+.dia span{
+    color: lightblue;
+    font-size: 0.8em;
+}
+h2#digitalClock::before {
+    content: "00:00:00";
+    position: absolute;
+    color: #343434;
+    z-index: -1;
 }
